@@ -1,0 +1,37 @@
+{
+  "name": "webpack-4-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:dev",
+    "build:dev": "webpack-dev-server --env dev --mode none",
+    "build:prod": "webpack --env prod --mode production"
+  },
+  "author": "mwieth",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^4.2.1",
+    "file-loader": "^6.0.0",
+    "gsap": "^3.4.2",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "svg-transform-loader": "^2.0.13",
+    "ts-loader": "^8.0.2",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-md5-hash": "0.0.6"
+  }
+}

@@ -2,21 +2,29 @@
     font-family: 'San Francisco';
     src: url(./Font/SFUIDisplay-Regular.otf);
 }
+
 body {
     margin: 0;
     background-image: url("./wall.png");
     position: fixed;
     height: 100%;
     width: 100%;
-    background-attachment: fixed;
+    background-attachment:local;
     background-size: cover;
     background-position: center;
     justify-content: center;
+    justify-self: baseline;
     overflow: hidden;
     cursor: none;
     font-family: 'San Francisco';
     letter-spacing: 0.6px;
+    border-radius: 20px;
 }
+
+html {
+    background-color: black;
+}
+
 #dock {
     position: fixed;
     bottom: 15px;
@@ -26,53 +34,66 @@ body {
     border-radius: 16px;
     backdrop-filter: blur(30px) saturate(2);
     z-index: 0;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
+    height: 72.5px;
 }
+
 table img {
     margin: px;
     border-radius: 10px;
 }
+
 #dock img {
     margin: 10px;
     border-radius: 10px;
 }
+
 img::selection {
     background-color: transparent;
 }
+
 table * {
     margin: 0;
 }
+
 table img {
     border: none;
 }
+
 table {
     width: 100%;
     height: 85%;
     margin: 15px;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
 }
+
 table::selection {
     background-color: transparent;
 }
+
 div.center {
     display: flex;
     justify-content: center;
 }
+
 div.centerIn {
     display: inline-flex;
     justify-content: center;
 }
+
 * {
     color: #fff;
     font-size: 10px;
 }
+
 .text {
     margin: 4px;
 }
+
 #control-center-trig {
     position: fixed;
     top: 0;
-    right: 0;
+    right: 15px;
     height: 20px;
     z-index: 1;
     background-color: transparent;
@@ -80,35 +101,39 @@ div.centerIn {
     align-items: center;
     justify-content: end;
     border-radius: 4px;
-    transition: 0.5s;
+    transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
     font-size: 11px;
-    margin-right: 5px;
 }
+
 #CC {
     position: fixed;
     height: 100%;
     width: 100%;
     z-index: -1;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
     justify-content: flex-end;
     backdrop-filter: blur(0px);
     padding: 20px;
     top: 0;
     opacity: 1;
+    border-radius: 20px;
 }
+
 #controlCenter {
     position: fixed;
     height: 100%;
     width: 100%;
     display: flex;
     z-index: 0;
-    transition: 1s;
+    transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
     align-items: flex-start;
     justify-content: flex-end;
     padding: 40px;
     top: -100%;
     opacity: 1;
+    border-radius: 20px;
 }
+
 .controls-2-2 {
     background-color: #2229;
     height: 106px;
@@ -116,6 +141,7 @@ div.centerIn {
     border-radius: 15px;
     margin: 10px 5px;
 }
+
 .controls-1-1 {
     background-color: #2229;
     height: 48px;
@@ -123,6 +149,23 @@ div.centerIn {
     border-radius: 15px;
     margin: 10px 5px;
 }
+
 #bD {
-    transition: 0.5s;
+    transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
+}
+
+.seperator {
+    height: 100%;
+    width: 100px;
+    display: inline-block;
+    background-color: black;
+    backdrop-filter: saturate(5);
+}
+
+.widget-1-2 {
+    height: 106px;
+    width: 270px;
+    background-color: #2228;
+    border-radius: 12px;
+    backdrop-filter: blur(30px) saturate(2);
 }

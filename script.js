@@ -8,13 +8,12 @@ var body = document.getElementById('table').style;
 var dock = document.getElementById('dock').style;
 var batteryDisplay = document.getElementById('bD');
 var batteryDisplay2 = document.getElementById('battery').style;
+var appGrid = document.getElementById('table').style;
+var height = window.innerHeight;
 
 var batteryPercentage = 100;
-var wifiSignal = 1;
+var wifiSignal = 2;
 
-batteryDisplay.innerHTML = `${batteryPercentage}%`;
-batteryDisplay2.width = `${batteryPercentage}%`;
-icon1.src = `wifi ${wifiSignal}.svg`;
 
 
 function openCC() {
@@ -24,7 +23,7 @@ function openCC() {
     CoCe.backdropFilter = 'blur(10px)';
     body.transform = 'scale(0.9)';
     dock.transform = 'scale(0.8)';
-    trig.margin = '15px 30px';
+    trig.margin = '15px 20px';
     batteryDisplay.style.fontWeight = '900';
     batteryDisplay.style.fontSize = '15px';
     icon1.style.height = '30px';
@@ -38,7 +37,6 @@ function closeCC() {
     body.transform = 'scale(1)';
     dock.transform = 'scale(1)';
     trig.margin = '0';
-    trig.marginRight = '5px';
     batteryDisplay.style.fontWeight = '500';
     batteryDisplay.style.fontSize = '11px';
     icon1.style.height = '20px';
@@ -46,11 +44,18 @@ function closeCC() {
     icon2.margin = '2px';
 }
 
-document.getBattery().then(function(battery) {
+navigator.getBattery().then(function(battery) {
     battery.addEventListener('levelchange', function() {    
       // Do stuff when the level changes, you can get it
       // from battery.level
-      batteryPercentage = battery.level*100;
+      batteryPercentage = Math.floor(battery.level*100);
+      batteryDisplay.innerHTML = `${batteryPercentage}%`;
+      batteryDisplay2.width = `${batteryPercentage}%`;
+      icon1.src = `wifi ${wifiSignal}.svg`;
     })
-    batteryPercentage = battery.level*100;
+    batteryPercentage = Math.floor(battery.level*100);
+    batteryDisplay.innerHTML = `${batteryPercentage}%`;
+    batteryDisplay2.width = `${batteryPercentage}%`;
+    icon1.src = `wifi ${wifiSignal}.svg`;
 });
+appGrid.height = `${height - parseFloat(dock.height)}px`;

@@ -38,11 +38,6 @@ html {
     height: 72.5px;
 }
 
-table img {
-    margin: px;
-    border-radius: 10px;
-}
-
 #dock img {
     margin: 10px;
     border-radius: 10px;
@@ -58,6 +53,8 @@ table * {
 
 table img {
     border: none;
+    margin: 0;
+    border-radius: 10px;
 }
 
 table {
@@ -65,10 +62,6 @@ table {
     height: 85%;
     margin: 15px;
     transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
-}
-
-table::selection {
-    background-color: transparent;
 }
 
 div.center {
@@ -131,7 +124,7 @@ div.centerIn {
     padding: 40px;
     top: -100%;
     opacity: 1;
-    border-radius: 20px;
+    border-radius: 21px;
 }
 
 .controls-2-2 {
@@ -168,4 +161,44 @@ div.centerIn {
     background-color: #2228;
     border-radius: 12px;
     backdrop-filter: blur(30px) saturate(2);
+}
+#home-widgets {
+    width: 100px;
+    height: 100%;
+    display: inline;
+}
+.right {
+    display: flex;
+    justify-content: right;
+}
+.c-cursor {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 200px;
+  background-color: #fff9;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.c-cursor_active {
+  background-color: var(--main-cursor-hover-clr);
+  backdrop-filter: none;
+}
+
+.c-cursor-lift_active {
+  background-color: rgba(0,0,0,0);
+  backdrop-filter: none;
+}
+#app {
+    background: #000;
+}
+#home-bar {
+    width: calc(100% / 4);
+    height: 5px;
+    background-color: #fffa;
+    backdrop-filter: invert(1) blur(30px) contrast(10000);
+    position: fixed;
+    bottom: -10px;
+    border-radius: 5px;
+    transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
 }

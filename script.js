@@ -6,6 +6,7 @@ var icon1 = document.getElementById('icon1');
 var icon2 = document.getElementById('icon2').style;
 var body = document.getElementById('table').style;
 var dock = document.getElementById('dock').style;
+var homeBar = document.getElementById('home-bar');
 var batteryDisplay = document.getElementById('bD');
 var batteryDisplay2 = document.getElementById('battery').style;
 var appGrid = document.getElementById('table').style;
@@ -47,15 +48,59 @@ function closeCC() {
 navigator.getBattery().then(function(battery) {
     battery.addEventListener('levelchange', function() {    
       // Do stuff when the level changes, you can get it
-      // from battery.level
-      batteryPercentage = Math.floor(battery.level*100);
-      batteryDisplay.innerHTML = `${batteryPercentage}%`;
+
+      batteryPercentage = Math.round(battery.level*100);
+      batteryDisplay.innerHTML = `${batteryPercentage}%`;      // from battery.level
       batteryDisplay2.width = `${batteryPercentage}%`;
       icon1.src = `wifi ${wifiSignal}.svg`;
     })
-    batteryPercentage = Math.floor(battery.level*100);
+    batteryPercentage = Math.round(battery.level*100);
     batteryDisplay.innerHTML = `${batteryPercentage}%`;
     batteryDisplay2.width = `${batteryPercentage}%`;
     icon1.src = `wifi ${wifiSignal}.svg`;
 });
+
+var app = document.getElementById('app').style;
+
 appGrid.height = `${height - parseFloat(dock.height)}px`;
+
+document.querySelectorAll('img').forEach(function(a, key) {
+    a.addEventListener('click', async function() {
+        var rect = a.getBoundingClientRect();
+        app.display = 'block';
+        app.transition = '0.4s cubic-bezier(0, 0, 0, 1)';
+        app.position = 'fixed';
+        app.height = '48px';
+        app.width = '48px';
+        app.borderRadius = '12px';
+        app.top = `${rect.y}px`;
+        app.left = `${rect.x}px`;
+        await delay();
+        app.height = '100%';
+        app.width = '100%';
+        app.borderRadius = '20px';
+        app.top = `0`;
+        app.left = `0`;
+        app.transition = '0';
+        dock.bottom = '-100px';
+        homeBar.style.bottom = '10px';
+        homeBar.addEventListener('click', async function() {
+            app.transition = '0.4s cubic-bezier(0, 0, 0, 1)';
+            app.position = 'fixed';
+            await delay();
+            app.height = '48px';
+            app.width = '48px';
+            app.borderRadius = '12px';
+            app.top = `${rect.y}px`;
+            app.left = `${rect.x}px`;
+            app.transition = '0';
+            dock.bottom = '15px';
+            homeBar.style.bottom = '-10px';
+            await delay(500);
+            app.display = 'none';
+        });
+    });
+});
+function delay(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+}

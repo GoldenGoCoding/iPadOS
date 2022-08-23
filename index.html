@@ -7,16 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="Sanay Nair">
     <meta property="og:title" content="Sanay Nair">
-    <link rel="stylesheet" href="style.css">
     <title>iPadOS in HTML</title>
 </head>
 
 <body>
-    <table id="table">
+    <table onmouse id="table">
         <tr>
             <td>
-                <div class="center"><img data-ccursor src="./36709/ios-icons/svg/app-store-2365235.svg" height="48"
-                        width="48"></div>
+                <div id="" class="center"><img data-ccursor src="./36709/ios-icons/svg/app-store-2365235.svg"
+                        height="48" width="48"></div>
                 <div class="center text">App Store</div>
             </td>
             <td>
@@ -120,21 +119,29 @@
             <td>
                 <div class="center"><img data-ccursor src="./36709/ios-icons/svg/my-shortcuts-1575945.svg" height="48"
                         width="48"></div>
-                <div class="center text">My Shortcuts</div>
+                <div class="center text">Shortcuts</div>
             </td>
         </tr>
     </table>
+    <div id="app"></div>
     <div class="center">
         <div id="dock">
-            <img data-ccursor="lift" src="./36709/ios-icons/svg/app-store-2365235.svg" height="48" width="48">
-            <img data-ccursor="lift" src="./36709/ios-icons/svg/apple-music-2365226.svg" height="48" width="48">
-            <img data-ccursor="lift" src="./36709/ios-icons/svg/apple-store-1575941.svg" height="48" width="48">
-            <img data-ccursor="lift" src="./36709/ios-icons/svg/apple-tv-1575940.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/news-2365224.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/notes-2365245.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/photos-2365244.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/podcasts-2365243.svg" height="48" width="48">
             <span class="separator"></span>
-            <img data-ccursor="lift" src="./36709/ios-icons/svg/books-2365234.svg" height="48" width="48">
-            <img data-ccursor="lift" src="./36709/ios-icons/svg/calculator-1575939.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/reminders-2365242.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/safari-2365241.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/settings-2365240.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/stocks-2365239.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/translate-2365238.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/voice-memos-1575942.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/wallet-2365237.svg" height="48" width="48">
+            <img data-ccursor="lift" src="./36709/ios-icons/svg/weather-2365236.svg" height="48" width="48">
         </div>
-        </h1>
+        <div data-ccursor id="home-bar"></div>
+    </div>
         <div id="CC">
             <div onclick="closeCC()" id="controlCenter">
                 <div>
@@ -152,20 +159,23 @@
             </div>
         </div>
         <div onclick="openCC()" draggable="true" data-ccursor="noPadding" id="control-center-trig">
-            <img id="icon1" style="padding: 0 0px;height: 20px;transition: 0.5s;" src="wifi 2.svg" alt=""><span id="bD">100%</span> 
+            <img id="icon1" style="padding: 0 0px;height: 20px;transition: 0.5s;" src="wifi 2.svg" alt=""><span
+                id="bD">100%</span>
             <div id="icon2" class="centerIn" style="margin: 2px; transition: 0.5s;">
                 <div
-                    style="display: inline-block;height: 11px; width: 22.5px; border-radius: 4px; border: 1px solid #fff8; padding: 1px;">
-                    <div id="battery" style="height: 100%; width: 100%; background-color: #fff; border-radius: 2px;"></div>
+                    style="display: inline-block;height: 11px; width: 20.5px; border-radius: 4px; border: 1px solid #fff8; padding: 1px;">
+                    <div id="battery" style="height: 100%; width: 100%; background-color: #fff; border-radius: 2px;">
+                    </div>
                 </div>
                 <div
-                    style="display: inline-block;height: 4px; width: 1px; background-color: #fff8; border-top-left-radius: 0;border-top-right-radius: 100px;border-bottom-left-radius: 0;border-bottom-right-radius: 100px;position: fixed;margin: 3.5px 22px;margin-right: -3px;">
+                    style="display: inline-block;height: 4px; width: 1px; background-color: #fff8; border-top-left-radius: 0;border-top-right-radius: 100px;border-bottom-left-radius: 0;border-bottom-right-radius: 100px;position: fixed;margin: 3.5px 20px;margin-right: -3px;">
                 </div>
             </div>
         </div>
 </body>
 <link href="lib/style.css?0705114f45538bdfddf2" rel="stylesheet">
 <script src="lib/main.1b3cb8da41fa378dcfd7.js?0705114f45538bdfddf2"></script>
+<link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 
 </html>

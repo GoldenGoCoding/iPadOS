@@ -175,4 +175,3 @@ document.getElementById('slider-volume').addEventListener('mousedown', function(
 function delay(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
-openCC();

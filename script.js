@@ -152,6 +152,27 @@ document.querySelectorAll('img').forEach(function (a, key) {
         });
     }
 });
+document.querySelectorAll('.toggle-circle').forEach(function(a) {
+    a.addEventListener('click', function() {
+        if (a.style.backgroundColor = 'rgba(255, 255, 255, 0.533)') {
+            a.style.backgroundColor = 'rgb(34, 136, 221)';
+            return;
+        }
+        else {
+            a.style.backgroundColor = 'rgba(255, 255, 255, 0.533)';
+            return;
+        }
+    });
+});
+document.getElementById('slider-brightness').addEventListener('mousedown', function(e) {
+    var res = 106 - e.clientY + document.getElementById('slider-brightness').getBoundingClientRect().y;
+    document.getElementById('sliderBr').style.height = `${res}px`;
+});
+document.getElementById('slider-volume').addEventListener('mousedown', function(e) {
+    var res = 106 - e.clientY + document.getElementById('slider-volume').getBoundingClientRect().y;
+    document.getElementById('sliderVo').style.height = `${res}px`;
+});
 function delay(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
+openCC();

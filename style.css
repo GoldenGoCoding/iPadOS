@@ -1,6 +1,74 @@
 @font-face {
-    font-family: 'San Francisco';
-    src: url(./Font/SFUIDisplay-Regular.otf);
+    font-family: SFBlack;
+    src: url(./Font/SF-Pro-Display-Black.otf);
+}
+@font-face {
+    font-family: SFBlackIt;
+    src: url(./Font/SF-Pro-Display-BlackItalic.otf);
+}
+@font-face {
+    font-family: SFBold;
+    src: url(./Font/SF-Pro-Display-Bold.otf);
+}
+@font-face {
+    font-family: SFBoldIt;
+    src: url(./Font/SF-Pro-Display-BoldItalic.otf);
+}
+@font-face {
+    font-family: SFHeavy;
+    src: url(./Font/SF-Pro-Display-Heavy.otf);
+}
+@font-face {
+    font-family: SFHeavyIt;
+    src: url(./Font/SF-Pro-Display-HeavyItalic.otf);
+}
+@font-face {
+    font-family: SFLight;
+    src: url(./Font/SF-Pro-Display-Light.otf);
+}
+@font-face {
+    font-family: SFLightIt;
+    src: url(./Font/SF-Pro-Display-LightItalic.otf);
+}
+@font-face {
+    font-family: SFMedium;
+    src: url(./Font/SF-Pro-Display-Medium.otf);
+}
+@font-face {
+    font-family: SFMediumIt;
+    src: url(./Font/SF-Pro-Display-MediumItalic.otf);
+}
+@font-face {
+    font-family: SFRegular;
+    src: url(./Font/SF-Pro-Display-Regular.otf);
+}
+@font-face {
+    font-family: SFRegularIt;
+    src: url(./Font/SF-Pro-Display-RegularItalic.otf);
+}
+@font-face {
+    font-family: SFsBold;
+    src: url(./Font/SF-Pro-Display-Semibold.otf);
+}
+@font-face {
+    font-family: SFsBoldIt;
+    src: url(./Font/SF-Pro-Display-SemiboldItalic.otf);
+}
+@font-face {
+    font-family: SFThin;
+    src: url(./Font/SF-Pro-Display-Thin.otf);
+}
+@font-face {
+    font-family: SFThinIt;
+    src: url(./Font/SF-Pro-Display-ThinItalic.otf);
+}
+@font-face {
+    font-family: SFUltLig;
+    src: url(./Font/SF-Pro-Display-Ultralight.otf);
+}
+@font-face {
+    font-family: SFUltLigIt;
+    src: url(./Font/SF-Pro-Display-UltralightItalic.otf);
 }
 
 body {
@@ -16,9 +84,29 @@ body {
     justify-self: baseline;
     overflow: hidden;
     cursor: none;
-    font-family: 'San Francisco';
+    font-family: SFRegular;
     letter-spacing: 0.6px;
     border-radius: 20px;
+}
+
+h1 {
+    font-family: SFBold;
+}
+h2 {
+    font-family: SFBold;
+}
+.h3 {
+    font-family: SFBold;
+    font-size: 15px;
+}
+h4 {
+    font-family: SFBold;
+}
+h5 {
+    font-family: SFBold;
+}
+h6 {
+    font-family: SFBold;
 }
 
 html {
@@ -47,31 +135,33 @@ img::selection {
     background-color: transparent;
 }
 
-table * {
+#table * {
     margin: 0;
 }
 
-table img {
+#table img {
     border: none;
     margin: 0;
     border-radius: 10px;
 }
 
-table {
+#table {
     width: 100%;
     height: 85%;
     margin: 15px;
     transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
 }
 
-div.center {
+.center {
     display: flex;
     justify-content: center;
+    border-radius: 15px;
 }
 
-div.centerIn {
+.centerIn {
     display: inline-flex;
     justify-content: center;
+    border-radius: 15px;
 }
 
 * {
@@ -110,6 +200,8 @@ div.centerIn {
     top: 0;
     opacity: 0;
     border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #controlCenter {
@@ -117,15 +209,18 @@ div.centerIn {
     height: 100%;
     width: 100%;
     display: flex;
+    justify-content: end;
     z-index: 0;
     transition: 0.5s cubic-bezier(0, 0, 0.03, 0.95);
-    align-items: flex-start;
-    justify-content: flex-end;
     padding: 40px;
     top: -100%;
+    right: 0;
     opacity: 1;
     border-radius: 21px;
-    overflow-y: scroll;
+    overflow-y: hidden;
+}
+#controlCenter table {
+    display: block;
 }
 
 .controls-2-2 {
@@ -133,7 +228,7 @@ div.centerIn {
     height: 106px;
     width: 106px;
     border-radius: 15px;
-    margin: 10px 5px;
+    margin: 2.5px;
 }
 
 .controls-1-1 {
@@ -141,7 +236,15 @@ div.centerIn {
     height: 48px;
     width: 48px;
     border-radius: 15px;
-    margin: 10px 5px;
+    margin: 2.5px;
+}
+
+.controls-1-2 {
+    background-color: #2229;
+    height: 48px;
+    width: 106px;
+    border-radius: 15px;
+    margin: 2.5px;
 }
 
 #bD {
@@ -216,6 +319,46 @@ div.centerIn {
     opacity: 0.5;
     backdrop-filter: none;
 }
+.toggle-circle {
+    margin: 2.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.533);
+    border-radius: 50%;
+    transition: background-color 0.5s;
+    height: 36px;
+    width: 36px;
+}
+
+#slider-brightness {
+    background-color: #2229;
+    height: 106px;
+    width: 48px;
+    border-radius: 15px;
+    margin: 2.5px;
+    overflow: hidden;
+    transform: rotate(180deg);
+}
+
+#slider-volume {
+    background-color: #2229;
+    height: 106px;
+    width: 48px;
+    border-radius: 15px;
+    margin: 2.5px;
+    overflow: hidden;
+    transform: rotate(180deg);
+}
+#sliderBr {
+    background-color: #fff;
+    width: 100%;
+}
+#sliderVo {
+    background-color: #fff;
+    width: 100%;
+}
+
 @media (prefers-color-scheme: light) {
     body {
         background-image: url('./light.png');
